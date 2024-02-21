@@ -34,7 +34,7 @@ def test_product_qnt_update(database):
 
 @pytest.mark.database
 def test_insert_or_replace_product(database):
-    database.insert_product(4, 'печиво', 'солодке', 30)
+    database.insert_or_replace_product(4, 'печиво', 'солодке', 30)
     product_qnt = database.select_product_qnt_by_id(4)
 
     assert product_qnt[0][0] == 30
@@ -42,7 +42,7 @@ def test_insert_or_replace_product(database):
 
 @pytest.mark.database
 def test_delete_product_by_id(database):
-    database.insert_product(99, 'тестові', 'дані', 999)
+    database.insert_or_replace_product(99, 'тестові', 'дані', 999)
     database.delete_product_by_id(99)
     qnt = database.select_product_qnt_by_id(99)
 

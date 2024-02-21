@@ -18,13 +18,3 @@ class GitHub:
 
         return body
     
-    # add http methods (post, put, get, delete) 4 methods - 1 test
-
-    # def add_email(self):
-    #     r = requests.post('https://api.github.com/user/emails', 
-    #         params={"emails":"octocat@github.com"}
-    #     )
-    #     body = r.json()
-
-    #     return body
-        
