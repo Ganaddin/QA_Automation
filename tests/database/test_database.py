@@ -14,6 +14,7 @@ def test_check_all_users(database):
     print(users)
 
 
+# Check address of the specified user
 @pytest.mark.database
 def test_check_user_sergii(database):
     user = database.get_user_address_by_name('Sergii')
@@ -24,6 +25,7 @@ def test_check_user_sergii(database):
     assert user[0][3] == 'Ukraine'
 
 
+# Change item quantity and check changed data
 @pytest.mark.database
 def test_product_qnt_update(database):
     database.update_product_qnt_by_id(1, 25)
@@ -32,6 +34,7 @@ def test_product_qnt_update(database):
     assert water_qnt[0][0] == 25
 
 
+# Insert new product data and check qty column
 @pytest.mark.database
 def test_insert_or_replace_product(database):
     database.insert_or_replace_product(4, 'печиво', 'солодке', 30)
@@ -40,6 +43,7 @@ def test_insert_or_replace_product(database):
     assert product_qnt[0][0] == 30
 
 
+# Check deleted product
 @pytest.mark.database
 def test_delete_product_by_id(database):
     database.insert_or_replace_product(99, 'тестові', 'дані', 999)

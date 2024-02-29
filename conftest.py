@@ -17,7 +17,7 @@ class User:
         self.name = ''
         self.second_name = ''   
 
-    
+# Fixture for api and fixtures tests    
 @pytest.fixture
 def user():
     user = User()
@@ -28,12 +28,14 @@ def user():
     user.remove()
 
 
+# Fixture for github_api tests
 @pytest.fixture
 def github_api():
     api = GitHub()
     yield api
 
 
+# Fixture for database tests
 @pytest.fixture
 def database():
     db = Database()

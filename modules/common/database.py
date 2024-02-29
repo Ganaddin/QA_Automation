@@ -57,5 +57,5 @@ class Database():
         record = self.cursor.fetchall()
         return record
                    
-    #Перевірка потрібного поля(primary key etc).\ Sorting\ Diff kinds of Join\ 
+    
 
